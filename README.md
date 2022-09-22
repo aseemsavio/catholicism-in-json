@@ -1,16 +1,15 @@
-# catholicism-in-json
+# ⛪️  catholicism-in-json
 
 This repository houses the following resources, all in usable JSON format.
 
-1. __Catechism of the Catholic Church__
-2. __The Canon Law__
-3. __General Instruction of The Roman Missal__
+1. 📒 __Catechism of the Catholic Church__
+2. 🇻🇦 __The Canon Law__
+3. ⛪️ __General Instruction of The Roman Missal__
 
 This repo utilises pickles from the
 very well-known Catholic Reddit bot [/u/Catebot](https://www.reddit.com/user/Catebot/) to create the JSONs. Please refer
-the [Catebot's GitHub repo](https://github.com/konohitowa/catebot) for more information.
-
-The JSON files will be released in the releases section shortly.
+the [Catebot's GitHub repo](https://github.com/konohitowa/catebot) for more information. 
+The JSON files can be accessed for your use from the [releases](https://github.com/aseemsavio/catholicism-in-json/releases) section.
 
 ## Structure of the JSON files
 
@@ -73,3 +72,5 @@ The __General Instruction of The Roman Missal__ file looks as follows.
 ]
 ```
 
+Feel free to leave me a note when you end up using the JSONs from this project.
+Would be fun for me to learn where these are put to use! 🤓
