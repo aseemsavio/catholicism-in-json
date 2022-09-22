@@ -8,7 +8,6 @@ def read_canon_law() -> list:
     law_numbers = [law for law in canon_law]
 
     canon_law_list = []
-    sorted_canon_law_list = []
 
     for law_num in law_numbers:
         law = canon_law[law_num]
