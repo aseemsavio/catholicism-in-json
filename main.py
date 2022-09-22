@@ -2,6 +2,8 @@ import json
 import pickle
 from operator import itemgetter
 
+from helpers.utils import create_json_file
+
 
 def read_canon_law() -> list:
     canon_law_from_pickle = pickle.load(open("pickles/canon.pickle", 'rb'))
@@ -23,14 +25,14 @@ def read_canon_law() -> list:
 
             for n in sub_law_numbers:
                 individual_sub_law = {
-                    "sub_law_id": int(n),
-                    "sub_law_text": sub_laws[n]
+                    "id": int(n),
+                    "text": sub_laws[n]
                 }
                 individual_sub_laws.append(individual_sub_law)
 
-            sorted_individual_sub_laws = sorted(individual_sub_laws, key=itemgetter('sub_law_id'))
+            sorted_individual_sub_laws = sorted(individual_sub_laws, key=itemgetter('id'))
             law_object = {
-                "law_id": int(law_num),
+                "id": int(law_num),
                 "sub_laws": sorted_individual_sub_laws
             }
 
@@ -39,12 +41,12 @@ def read_canon_law() -> list:
         else:
             law_text = law[1]
             law_object = {
-                "law_id": int(law_num),
-                "law_text": law_text
+                "id": int(law_num),
+                "text": law_text
             }
             canon_law_list.append(law_object)
 
-    sorted_canon_law_list = sorted(canon_law_list, key=itemgetter("law_id"))
+    sorted_canon_law_list = sorted(canon_law_list, key=itemgetter("id"))
     return sorted_canon_law_list
 
 
@@ -58,12 +60,12 @@ def read_catechism() -> list:
         paragraph = catechism_from_pickle[paragraph_number]
         text = paragraph[0]
         paragraph_object = {
-            "paragraph_number": int(paragraph_number),
+            "paragraph_id": int(paragraph_number),
             "text": text
         }
         catechism_list.append(paragraph_object)
 
-    return sorted(catechism_list, key=itemgetter("paragraph_number"))
+    return sorted(catechism_list, key=itemgetter("paragraph_id"))
 
 
 def read_general_instruction_of_the_roman_missal() -> list:
@@ -73,26 +75,23 @@ def read_general_instruction_of_the_roman_missal() -> list:
     girm_list = []
 
     for girm_id in girm_ids:
-        girm = girm_from_pickle[girm_id]
-        text = girm[0]
+        single_girm_object = girm_from_pickle[girm_id]
+        text = single_girm_object[0]
         girm_object = {
-            "girm_id": int(girm_id),
+            "id": int(girm_id),
             "text": text
         }
         girm_list.append(girm_object)
 
-    return sorted(girm_list, key=itemgetter("girm_id"))
+    return sorted(girm_list, key=itemgetter("id"))
 
 
 if __name__ == '__main__':
     canon = read_canon_law()
-    with open("canon.json", "w") as outfile:
-        json.dump(canon, outfile)
+    create_json_file("canon.json", canon)
 
     catechism = read_catechism()
-    with open("catechism.json", "w") as outfile:
-        json.dump(catechism, outfile)
+    create_json_file("catechism.json", catechism)
 
     girm = read_general_instruction_of_the_roman_missal()
-    with open("girm.json", "w") as outfile:
-        json.dump(girm, outfile)
+    create_json_file("girm.json", girm)
