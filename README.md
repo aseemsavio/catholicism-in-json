@@ -14,7 +14,24 @@ The JSON files will be released in the releases section shortly.
 
 ## Structure of the JSON files
 
-1. `canon.json`
+1. `catechism.json`
+
+This file is straight forward. It is a JSON list consisting of all the paragraphs of the Catechism of The Church.
+
+```json
+[
+  {
+    "paragraph_number": 1,
+    "text": "God, infinitely perfect and blessed in himself, in a plan of sheer goodness freely created man to make him share in his own blessed life. For this reason, at every time and in every place, God draws close to man. He calls man to seek him, to know him, to love him with all his strength. He calls together all men, scattered and divided by sin, into the unity of his family, the Church. To accomplish this, when the fullness of time had come, God sent his Son as Redeemer and Savior. In his Son and through him, he invites men to become, in the Holy Spirit, his adopted children and thus heirs of his blessed life.\n"
+  },
+  {
+    "paragraph_number": 2,
+    "text": "So that this call should resound throughout the world, Christ sent forth the apostles he had chosen, commissioning them to proclaim the gospel: \"Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you; and lo, I am with you always, to the close of the age.\" Strengthened by this mission, the apostles \"went forth and preached everywhere, while the Lord worked with them and confirmed the message by the signs that attended it.\"\n"
+  }
+]
+```
+
+2. `canon.json`
 
 The following is a snippet from the `canon.json` file.
 At the top level is an array, which houses all the Canon laws.
@@ -39,23 +56,6 @@ The `sub_laws` themselves have a `sub_law_id` and a `sub_law_text`.
         "sub_law_text": "Universal or particular customs beyond the law (*praeter ius*) which are in force until now are preserved.\n\n"
       }
     ]
-  }
-]
-```
-
-2. `catechism.json`
-
-This file is straight forward. It is a JSON list consisting of all the paragraphs of the Catechism of The Church.
-
-```json
-[
-  {
-    "paragraph_number": 1,
-    "text": "God, infinitely perfect and blessed in himself, in a plan of sheer goodness freely created man to make him share in his own blessed life. For this reason, at every time and in every place, God draws close to man. He calls man to seek him, to know him, to love him with all his strength. He calls together all men, scattered and divided by sin, into the unity of his family, the Church. To accomplish this, when the fullness of time had come, God sent his Son as Redeemer and Savior. In his Son and through him, he invites men to become, in the Holy Spirit, his adopted children and thus heirs of his blessed life.\n"
-  },
-  {
-    "paragraph_number": 2,
-    "text": "So that this call should resound throughout the world, Christ sent forth the apostles he had chosen, commissioning them to proclaim the gospel: \"Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, teaching them to observe all that I have commanded you; and lo, I am with you always, to the close of the age.\" Strengthened by this mission, the apostles \"went forth and preached everywhere, while the Lord worked with them and confirmed the message by the signs that attended it.\"\n"
   }
 ]
 ```
