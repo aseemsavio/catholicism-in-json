@@ -6,6 +6,10 @@ from helpers.utils import create_json_file
 
 
 def read_canon_law() -> list:
+    """
+    Reads the canon.pickle file.
+    :return: a list of Canon Law
+    """
     canon_law_from_pickle = pickle.load(open("pickles/canon.pickle", 'rb'))
     law_numbers = [law for law in canon_law_from_pickle]
 
@@ -51,6 +55,10 @@ def read_canon_law() -> list:
 
 
 def read_catechism() -> list:
+    """
+    Reads the catechism.pickle file.
+    :return: a list of catechism paragraphs.
+    """
     catechism_from_pickle = pickle.load(open("pickles/catechism.pickle", 'rb'))
     catechism_paragraph_numbers = [number for number in catechism_from_pickle]
 
@@ -60,15 +68,19 @@ def read_catechism() -> list:
         paragraph = catechism_from_pickle[paragraph_number]
         text = paragraph[0]
         paragraph_object = {
-            "paragraph_id": int(paragraph_number),
+            "id": int(paragraph_number),
             "text": text
         }
         catechism_list.append(paragraph_object)
 
-    return sorted(catechism_list, key=itemgetter("paragraph_id"))
+    return sorted(catechism_list, key=itemgetter("id"))
 
 
 def read_general_instruction_of_the_roman_missal() -> list:
+    """
+    Reads the girm.pickle file.
+    :return: List of girm paragraphs
+    """
     girm_from_pickle = pickle.load(open("pickles/girm.pickle", 'rb'))
     girm_ids = [girm_id for girm_id in girm_from_pickle]
 
