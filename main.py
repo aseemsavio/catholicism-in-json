@@ -66,6 +66,24 @@ def read_catechism() -> list:
     return sorted(catechism_list, key=itemgetter("paragraph_number"))
 
 
+def read_general_instruction_of_the_roman_missal() -> list:
+    girm_from_pickle = pickle.load(open("pickles/girm.pickle", 'rb'))
+    girm_ids = [girm_id for girm_id in girm_from_pickle]
+
+    girm_list = []
+
+    for girm_id in girm_ids:
+        girm = girm_from_pickle[girm_id]
+        text = girm[0]
+        girm_object = {
+            "girm_id": int(girm_id),
+            "text": text
+        }
+        girm_list.append(girm_object)
+
+    return sorted(girm_list, key=itemgetter("girm_id"))
+
+
 if __name__ == '__main__':
     canon = read_canon_law()
     with open("canon.json", "w") as outfile:
@@ -74,4 +92,7 @@ if __name__ == '__main__':
     catechism = read_catechism()
     with open("catechism.json", "w") as outfile:
         json.dump(catechism, outfile)
-    a = catechism
+
+    girm = read_general_instruction_of_the_roman_missal()
+    with open("girm.json", "w") as outfile:
+        json.dump(girm, outfile)

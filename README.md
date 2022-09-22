@@ -59,3 +59,17 @@ This file is straight forward. It is a JSON list consisting of all the paragraph
   }
 ]
 ```
+
+3. `girm.json`
+
+The __General Instruction of The Roman Missal__ file looks as follows.
+
+```json
+[
+  {
+    "girm_id": 1,
+    "text": "As Christ the Lord was about to celebrate with the disciples the paschal supper in which he instituted the Sacrifice of his Body and Blood, he commanded that a large, furnished upper room be prepared (Lk 22:12). Indeed, the Church has always judged that this command also applied to herself whenever she decided about things related to the disposition of people's minds, and of places, rites, and texts for the Celebration of the Most Holy Eucharist. The present norms, too, prescribed in keeping with the will of the Second Vatican Council, together with the new Missal with which the Church of the Roman Rite will henceforth celebrate the Mass, are again a demonstration of this same solicitude of the Church, of her faith and her unaltered love for the supreme mystery of the Eucharist, and also attest to her continuous and consistent tradition, even though certain new elements have been introduced.\n\n"
+  }
+]
+```
+
