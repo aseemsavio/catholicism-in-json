@@ -4,13 +4,13 @@ from operator import itemgetter
 
 
 def read_canon_law() -> list:
-    canon_law = pickle.load(open("pickles/canon.pickle", 'rb'))
-    law_numbers = [law for law in canon_law]
+    canon_law_from_pickle = pickle.load(open("pickles/canon.pickle", 'rb'))
+    law_numbers = [law for law in canon_law_from_pickle]
 
     canon_law_list = []
 
     for law_num in law_numbers:
-        law = canon_law[law_num]
+        law = canon_law_from_pickle[law_num]
 
         is_list = law[0]
 
@@ -48,7 +48,30 @@ def read_canon_law() -> list:
     return sorted_canon_law_list
 
 
+def read_catechism() -> list:
+    catechism_from_pickle = pickle.load(open("pickles/catechism.pickle", 'rb'))
+    catechism_paragraph_numbers = [number for number in catechism_from_pickle]
+
+    catechism_list = []
+
+    for paragraph_number in catechism_paragraph_numbers:
+        paragraph = catechism_from_pickle[paragraph_number]
+        text = paragraph[0]
+        paragraph_object = {
+            "paragraph_number": int(paragraph_number),
+            "text": text
+        }
+        catechism_list.append(paragraph_object)
+
+    return sorted(catechism_list, key=itemgetter("paragraph_number"))
+
+
 if __name__ == '__main__':
     canon = read_canon_law()
     with open("canon.json", "w") as outfile:
         json.dump(canon, outfile)
+
+    catechism = read_catechism()
+    with open("catechism.json", "w") as outfile:
+        json.dump(catechism, outfile)
+    a = catechism
