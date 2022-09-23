@@ -107,3 +107,6 @@ if __name__ == '__main__':
 
     girm = read_general_instruction_of_the_roman_missal()
     create_json_file("girm.json", girm)
+
+    print("The following files - canon.json, catechism.json, and girm.json have been created and stored at the "
+          "project's root.")

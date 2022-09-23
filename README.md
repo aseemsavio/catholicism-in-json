@@ -1,4 +1,4 @@
-# ⛪️  catholicism-in-json
+# ⛪️ catholicism-in-json
 
 This repository houses the following resources, all in usable JSON format.
 
@@ -6,16 +6,18 @@ This repository houses the following resources, all in usable JSON format.
 2. 🇻🇦 __The Canon Law__
 3. ⛪️ __General Instruction of The Roman Missal__
 
-This repo utilises pickles from the
-very well-known Catholic Reddit bot [/u/Catebot](https://www.reddit.com/user/Catebot/) to create the JSONs. Please refer
-the [Catebot's GitHub repo](https://github.com/konohitowa/catebot) for more information. 
-The JSON files can be accessed for your use from the [releases](https://github.com/aseemsavio/catholicism-in-json/releases) section.
+This repo utilizes pickles from the
+well-known Catholic Reddit bot [/u/Catebot](https://www.reddit.com/user/Catebot/) to create the JSON files. Please refer
+to the [Catebot's GitHub repo](https://github.com/konohitowa/catebot) for more information.
+You can access the JSON files for your use from
+the [releases](https://github.com/aseemsavio/catholicism-in-json/releases) section.
+Note that the text in these files is in `markdown` style - with bold, italics, quotes, etc.
 
 ## Structure of the JSON files
 
 1. `catechism.json`
 
-This file is straight forward. It is a JSON list consisting of all the paragraphs of the Catechism of The Church.
+This file is straightforward. It is a JSON list consisting of all the paragraphs of the Catechism of The Church.
 
 ```json
 [
@@ -34,8 +36,8 @@ This file is straight forward. It is a JSON list consisting of all the paragraph
 
 The following is a snippet from the `canon.json` file.
 At the top level is an array, which houses all the Canon laws.
-Each law has an `id`, and either a `text` or an array of `sub_laws`.
-The `sub_laws` themselves have an `id` and a `text`.
+Each law has an `id` and either a `text` or an array of `sub_laws`.
+The `sub_laws` have an `id` and a `text`.
 
 ```json
 [
@@ -61,7 +63,7 @@ The `sub_laws` themselves have an `id` and a `text`.
 
 3. `girm.json`
 
-The __General Instruction of The Roman Missal__ file looks as follows.
+The contents of The __General Instruction of The Roman Missal__ file look as follows.
 
 ```json
 [
@@ -72,5 +74,15 @@ The __General Instruction of The Roman Missal__ file looks as follows.
 ]
 ```
 
+## Note to Contributors/Developers
+
+If you're feeling particularly nerdy, and hence wish to generate the JSON files by yourselves,
+you may run the following command from the root of this project.
+You need to have Python installed on your machine for this.
+
+```
+ python main.py
+```
+
 Feel free to leave me a note when you end up using the JSONs from this project.
-Would be fun for me to learn where these are put to use! 🤓
+It would be fun for me to learn how and where you put this project to use! 🤓
