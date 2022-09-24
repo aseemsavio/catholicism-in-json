@@ -36,8 +36,8 @@ This file is straightforward. It is a JSON list consisting of all the paragraphs
 
 The following is a snippet from the `canon.json` file.
 At the top level is an array, which houses all the Canon laws.
-Each law has an `id` and either a `text` or an array of `sub_laws`.
-The `sub_laws` have an `id` and a `text`.
+Each law has an `id` and either a `text` or an array - `sections`.
+Each `sections` object contains an `id` and a `text`.
 
 ```json
 [
@@ -47,7 +47,7 @@ The `sub_laws` have an `id` and a `text`.
   },
   {
     "id": 5,
-    "sub_laws": [
+    "sections": [
       {
         "id": 1,
         "text": "Universal or particular customs presently in force which are contrary to the prescripts of these canons and are reprobated by the canons of this Code are absolutely suppressed and are not permitted to revive in the future. Other contrary customs are also considered suppressed unless the Code expressly provides otherwise or unless they are centenary or immemorial customs which can be tolerated if, in the judgment of the ordinary, they cannot be removed due to the circumstances of places and persons.\n\n"
@@ -86,3 +86,4 @@ You need to have Python installed on your machine for this.
 
 Feel free to leave me a note when you end up using the JSONs from this project.
 It would be fun for me to learn how and where you put this project to use! 🤓
+

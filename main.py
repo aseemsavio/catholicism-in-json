@@ -37,7 +37,7 @@ def read_canon_law() -> list:
             sorted_individual_sub_laws = sorted(individual_sub_laws, key=itemgetter('id'))
             law_object = {
                 "id": int(law_num),
-                "sub_laws": sorted_individual_sub_laws
+                "sections": sorted_individual_sub_laws
             }
 
             canon_law_list.append(law_object)
